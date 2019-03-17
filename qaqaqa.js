@@ -1,5 +1,12 @@
-let arr = [12,12,12,12,12];
+var p = {
+        a:10
+};
 
-console.log(arr.reduce(function (a,i) {
-        return a+i;
-}));
+q = Object.create(p);
+q.b = 20;
+
+r = Object.create(q);
+r.c = 30;
+p.a++;
+console.log(q.a);
+console.log(r.a);

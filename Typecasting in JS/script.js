@@ -22,8 +22,8 @@ console.log(""== 0);   //Empty string can be typecast to 0
 console.log(+"1"); // unary '+' operator tries converting input to number o/p: 1
 console.log(+false); // 0
 
-let k = {
-};
+let k = {};
+
 console.log(k.toString()); // "[object, Object]" the one with 'O' is the class
 console.log([] + {});
 console.log(+k); //displays "NaN" signifying "Not A Number"
