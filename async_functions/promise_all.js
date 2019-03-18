@@ -45,7 +45,11 @@ Promise.all([
     download('http://cb.lk/promo.png')
 
 ]).then(function (values) {
-    console.log(values); //filenames will be logged
+    return Promise.all(values.map(resize))
+
+}).then(function (value) {
+    console.log(value);
 })
+    .catch(function (err) { console.error(err) })
 /*-------Hence in Promise.all() in the arguement an array of promise is passed and all peomises run parallely
 * -------and their resolve value is stored as result in arguement of then()------*/
