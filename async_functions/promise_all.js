@@ -44,11 +44,13 @@ Promise.all([
     download('http://cb.lk/banner.png'),
     download('http://cb.lk/promo.png')
 
-]).then(function (values) {
-    return Promise.all(values.map(resize))
+]).then(function (downloadvalues) {
+    return Promise.all(downloadvalues.map(resize))
 
-}).then(function (value) {
-    console.log(value);
+}).then(function (resizevalues) {
+    return Promise.all(resizevalues.map(upload))
+}).then(function (uploadvalues) {
+    console.log(uploadvalues);
 })
     .catch(function (err) { console.error(err) })
 /*-------Hence in Promise.all() in the arguement an array of promise is passed and all peomises run parallely
